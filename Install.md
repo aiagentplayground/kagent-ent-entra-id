@@ -265,7 +265,7 @@ otel:
     enabled: true
     exporter:
       otlp:
-        endpoint: kagent-enterprise-ui.kagent.svc.cluster.local:4317
+        endpoint: solo-enterprise-ui.kagent.svc.cluster.local:4317
         insecure: true
 controller:
   image:
