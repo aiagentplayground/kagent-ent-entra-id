@@ -173,7 +173,7 @@ export KAGENT_ENT_VERSION=0.1.10-2026-01-06-main-ba15b13f
 ## Version of KAGENT
 
 ```
-export KAGENT_ENT_VERSION=0.1.10-2026-01-06-main-ba15b13f```
+export KAGENT_ENT_VERSION=0.1.10-2026-01-06-main-ba15b13f
 ```
 
 ## Azure AD Groups
