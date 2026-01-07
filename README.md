@@ -382,7 +382,7 @@ oidc:
 rbac:
   roleMapping:
     # CEL expression to map OIDC claims to roles
-    roleMapper: "claims.groups.transformList(i, v, v in rolesMap, rolesMap[v])"
+    roleMapper: "has(claims.Groups) ? claims.Groups.transformList(i, v, v in rolesMap, rolesMap[v]) : (has(claims.groups) ? claims.groups.transformList(i, v, v in rolesMap, rolesMap[v]) : [])"
     # Map Azure AD group Object IDs to internal roles
     roleMappings:
       <ADMINS_GROUP_ID>: "global.Admin"     # kagent-admins
@@ -422,7 +422,7 @@ oidc:
 
 rbac:
   roleMapping:
-    roleMapper: "claims.groups.transformList(i, v, v in rolesMap, rolesMap[v])"
+    roleMapper: "has(claims.Groups) ? claims.Groups.transformList(i, v, v in rolesMap, rolesMap[v]) : (has(claims.groups) ? claims.groups.transformList(i, v, v in rolesMap, rolesMap[v]) : [])"
     roleMappings:
       YOUR_ADMINS_GROUP_ID: "global.Admin"    # kagent-admins
       YOUR_READERS_GROUP_ID: "global.Reader"   # kagent-readers
